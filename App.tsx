@@ -8,8 +8,8 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Image } from 'react-native';
 import colors from './src/res/colors';
-import ViewList from './src/components/list/ViewList';
-import ViewTask from './src/components/task/ViewTask';
+import ListStack from './src/components/list/ListStack';
+import TaskStack from './src/components/task/TaskStack';
 
 const Tabs = createBottomTabNavigator();
 
@@ -24,25 +24,25 @@ const App = () => {
           },
         }}>
         <Tabs.Screen
-          name="COINS"
-          component={ViewTask}
+          name="List"
+          component={ListStack}
           options={{
             tabBarIcon: ({ size, color }) => (
               <Image
                 style={{ tintColor: color, width: size, height: size }}
-                source={require('./src/assets/bank.png')}
+                source={require('./src/assets/img/outline_playlist_add_white_48dp.png')}
               />
             ),
           }}
         />
         <Tabs.Screen
-          name="Favorite"
-          component={ViewList}
+          name="Task"
+          component={TaskStack}
           options={{
             tabBarIcon: ({ size, color }) => (
               <Image
                 style={{ tintColor: color, width: size, height: size }}
-                source={require('./src/assets/star.png')}
+                source={require('./src/assets/img/outline_view_carousel_white_48dp.png')}
               />
             ),
           }}
